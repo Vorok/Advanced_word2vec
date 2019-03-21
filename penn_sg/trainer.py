@@ -60,6 +60,9 @@ class PennTrainer:
             self.penn_skip_gram_model.save_embedding(self.data.id2word, self.output_file_name)
 
 
-if __name__ == '__main__':
-    penn = PennTrainer(input_file="../data/enwik8_shorter_cleaned.txt", output_file="../embeddings/out_enwik8_penn.vec")
+def lets_train(input_file, output_file):
+    penn = PennTrainer(input_file, output_file)
     penn.train()
+if __name__ == '__main__':
+    lets_train(input_file="../data/google_analogy_sem.txt", output_file="../embeddings/out_penn_google_analogy_500dim_5w.vec")
+    

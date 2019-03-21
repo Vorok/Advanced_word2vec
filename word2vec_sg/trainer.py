@@ -57,7 +57,10 @@ class Word2VecTrainer:
 
             self.skip_gram_model.save_embedding(self.data.id2word, self.output_file_name)
 
-
-if __name__ == '__main__':
-    w2v = Word2VecTrainer(input_file="../data/enwik8_shorter_cleaned.txt", output_file="../embeddings/out_enwik8_w2v.vec")
+def lets_train(input_file, output_file):
+    w2v = Word2VecTrainer(input_file, output_file)
     w2v.train()
+if __name__ == '__main__':
+    #lets_train(input_file="../data/enwik8_short_cleaned.txt", output_file="../embeddings/out_enwik8_w2v_short_500dim_5w.vec")
+    lets_train(input_file="../data/google_analogy_sem.txt", output_file="../embeddings/out_w2v_google_analogy_500dim_5w.vec")
+    
